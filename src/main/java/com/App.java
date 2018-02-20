@@ -1,10 +1,6 @@
 package com;
 
-import javafx.collections.transformation.SortedList;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 
 /**
@@ -16,16 +12,13 @@ public class App
     public static void main( String[] args )
     {
         PieceFactory pieceFactory = new PieceFactory();
-
         pieceFactory.getPiece("pawn");
 
-        LinkedHashMap<Integer,Integer> xPlane = new LinkedHashMap();
+        KeypadChess keypad = new KeypadChess();
 
-        // 0 - 0 1 2
-        ArrayList sortedList = new ArrayList();
-        xPlane.put(0,);
+        ArrayList<Integer> coordinates = keypad.getPosition(0);
+        Integer key = keypad.getKey(0,1);
 
-        keypad.entrySet(0,"*,0,#");
 
 
     }
