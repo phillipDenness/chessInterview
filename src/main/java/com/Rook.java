@@ -22,7 +22,7 @@ public class Rook extends Piece {
         Integer xCurrentPlane = pieceCoordinates.get(0);
         Integer yCurrentPlane = pieceCoordinates.get(1);
 
-        if (xCurrentPlane.equals(xTargetPlane) || yCurrentPlane.equals(yTargetPlane)){
+        if (targetCoordinates == pieceCoordinates || xCurrentPlane.equals(xTargetPlane) || yCurrentPlane.equals(yTargetPlane)){
                 return true;
         }else {
             return false;

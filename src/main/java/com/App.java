@@ -8,8 +8,22 @@ public class App
     public static void main( String[] args )
     {
         KeypadChess keypad = new KeypadChess();
-        
-        PieceFactory pieceFactory = new PieceFactory(keypad,5);
+        PhoneNumbers phoneNumbers = new PhoneNumbers();
+
+        Integer startKey = 5;
+        phoneNumbers.constructLegalNumber(startKey);
+
+        PieceFactory pieceFactory = new PieceFactory(keypad,startKey);
+        Piece queen = pieceFactory.getPiece("queen");
+
+        while (true) {
+            for (int n = 1; n <= 12; n++) {
+
+                queen.movePiece(n);
+                phoneNumbers.constructLegalNumber(queen.key);
+            }
+            System.out.println(phoneNumbers.totalLegalNumbers);
+        }
 
     /*
         if (true) {

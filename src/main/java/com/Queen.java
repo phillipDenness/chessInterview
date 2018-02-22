@@ -9,10 +9,14 @@ public class Queen extends Piece {
     }
 
     public void movePiece(Integer key) {
+        //System.out.println(key);
+
         ArrayList<Integer> targetCoordinates = keypad.getCoordinates(key);
 
         if (validateMove(targetCoordinates)){
+
             this.pieceCoordinates = targetCoordinates;
+            this.key = keypad.getKey(this.pieceCoordinates);
         }
     }
 
@@ -27,7 +31,7 @@ public class Queen extends Piece {
 
        // System.out.println(xPlaneDifference + "," + Math.abs(yPlaneDifference));
 
-        if (xCurrentPlane.equals(xTargetPlane) || yCurrentPlane.equals(yTargetPlane) || xPlaneDifference.equals(yPlaneDifference)){
+        if (targetCoordinates == pieceCoordinates || xCurrentPlane.equals(xTargetPlane) || yCurrentPlane.equals(yTargetPlane) || xPlaneDifference.equals(yPlaneDifference)){
             return true;
         }
         return false;

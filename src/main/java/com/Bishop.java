@@ -26,7 +26,7 @@ public class Bishop extends Piece {
         Integer yPlaneDifference = Math.abs(yCurrentPlane - yTargetPlane);
 
        // System.out.println(xPlaneDifference + "," + Math.abs(yPlaneDifference));
-        if (xPlaneDifference.equals(yPlaneDifference)){
+        if (targetCoordinates == pieceCoordinates || xPlaneDifference.equals(yPlaneDifference)){
             return true;
         }
             return false;

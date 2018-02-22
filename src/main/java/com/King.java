@@ -25,7 +25,7 @@ public class King extends Piece {
         Integer yPlaneDifference = Math.abs(yCurrentPlane - yTargetPlane);
 
         // System.out.println(xPlaneDifference + "," + Math.abs(yPlaneDifference));
-        if (xPlaneDifference.equals(1) || yPlaneDifference.equals(1)){
+        if (targetCoordinates == pieceCoordinates || xPlaneDifference.equals(1) || yPlaneDifference.equals(1)){
             return true;
         }
         return false;

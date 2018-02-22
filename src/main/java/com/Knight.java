@@ -26,7 +26,7 @@ public class Knight extends Piece {
 
         System.out.println(xPlaneDifference + "," + Math.abs(yPlaneDifference));
 
-        if (xPlaneDifference.equals(2) && yPlaneDifference.equals(1) || xPlaneDifference.equals(1) && yPlaneDifference.equals(2)){
+        if (targetCoordinates == pieceCoordinates || xPlaneDifference.equals(2) && yPlaneDifference.equals(1) || xPlaneDifference.equals(1) && yPlaneDifference.equals(2)){
             return true;
         }
         return false;

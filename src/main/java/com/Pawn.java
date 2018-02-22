@@ -36,12 +36,12 @@ public class Pawn extends Piece{
 
         //Validate xPlane
         if (!isQueen){
-            if (yCurrentPlane.equals(yTargetPlane) && xPlaneDifference == 2 && xCurrentPlane.equals(2) || xPlaneDifference == 2 && xCurrentPlane.equals(3) && yCurrentPlane.equals(1)|| xPlaneDifference == 1){
+            if (targetCoordinates == pieceCoordinates || yCurrentPlane.equals(yTargetPlane) && xPlaneDifference == 2 && xCurrentPlane.equals(2) || xPlaneDifference == 2 && xCurrentPlane.equals(3) && yCurrentPlane.equals(1)|| xPlaneDifference == 1){
             //Validate yPlane
                 return true;
             }
         }else{
-            if (xCurrentPlane.equals(xTargetPlane) || yCurrentPlane.equals(yTargetPlane) || xPlaneDifference.equals(yPlaneDifference)){
+            if (targetCoordinates == pieceCoordinates || xCurrentPlane.equals(xTargetPlane) || yCurrentPlane.equals(yTargetPlane) || xPlaneDifference.equals(yPlaneDifference)){
                 return true;
             }
         }

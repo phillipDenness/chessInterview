@@ -6,6 +6,7 @@ public abstract class Piece {
 
     KeypadChess keypad;
     ArrayList<Integer> pieceCoordinates;
+    Integer key;
 
     public Piece(KeypadChess keypad,Integer startKey) {
         this.keypad = keypad;
