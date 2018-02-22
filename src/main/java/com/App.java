@@ -11,7 +11,7 @@ public class App
         
         PieceFactory pieceFactory = new PieceFactory(keypad,5);
 
-
+    /*
         if (true) {
             Piece pawn = pieceFactory.getPiece("pawn");
 
