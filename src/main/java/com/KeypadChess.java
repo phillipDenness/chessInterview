@@ -37,6 +37,10 @@ public class KeypadChess {
         System.out.println(row);
     }
 
+    public Integer getKey(ArrayList<Integer> pieceCoordinates) {
+        return getKey(pieceCoordinates.get(0), pieceCoordinates.get(1));
+    }
+
     public Integer getKey(int xPlane, int yPlane){
 
         if (xPlane > xPlanes.size()) {
@@ -50,7 +54,7 @@ public class KeypadChess {
         return key;
     }
 
-    public ArrayList<Integer> getPosition(Integer key) {
+    public ArrayList<Integer> getCoordinates(Integer key) {
         ArrayList<Integer> coordinates = new ArrayList();
 
         for (int x = 0 ; x < xPlanes.size() ; x++){
