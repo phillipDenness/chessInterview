@@ -4,20 +4,27 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
 public class KeypadChess {
-    private LinkedHashMap<Integer,ArrayList> xPlanes = new LinkedHashMap<Integer, ArrayList>();
+    private LinkedHashMap<Integer,ArrayList<Integer>> xPlanes = new LinkedHashMap<Integer, ArrayList<Integer>>();
 
+    public Integer getNumberOfKeys(){
+        int total = 0;
+        for (ArrayList<Integer> list : xPlanes.values()) {
+            total += list.size();
+        }
+        return total;
+    }
     public KeypadChess() {
         // 0 - 1 2 3
-        ArrayList firstRow = this.addRow(1,2,3);
+        ArrayList<Integer> firstRow = this.addRow(1,2,3);
         this.setRow(0,firstRow);
         // 1 - 4 5 6
-        ArrayList secondRow = this.addRow(4,5,6);
+        ArrayList<Integer>  secondRow = this.addRow(4,5,6);
         this.setRow(1,secondRow);
         // 2 - 7 8 9
-        ArrayList thirdRow = this.addRow(7,8,9);
+        ArrayList<Integer>  thirdRow = this.addRow(7,8,9);
         this.setRow(2,thirdRow);
         // 3 - * 0 #
-        ArrayList fourthRow = this.addRow(10,11,12);
+        ArrayList<Integer>  fourthRow = this.addRow(10,11,12);
         this.setRow(3,fourthRow);
     }
 

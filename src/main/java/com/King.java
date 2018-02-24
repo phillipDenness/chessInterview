@@ -3,16 +3,25 @@ package com;
 import java.util.ArrayList;
 
 public class King extends Piece {
+
     public King(KeypadChess keypad, Integer startKey) {
         super(keypad, startKey);
     }
 
-    public void movePiece(Integer key) {
+    public Boolean movePiece(Integer key) {
         ArrayList<Integer> targetCoordinates = keypad.getCoordinates(key);
-
         if (validateMove(targetCoordinates)){
+
+            if (!(key==10) && !(key==12)) {
+                validKeys.add(key);
+            }
+
             this.pieceCoordinates = targetCoordinates;
+            this.key = keypad.getKey(this.pieceCoordinates);
+
+            return true;
         }
+        return false;
     }
 
     public boolean validateMove(ArrayList<Integer> targetCoordinates) {

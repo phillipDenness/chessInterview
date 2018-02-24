@@ -1,87 +1,25 @@
 package com;
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
+import java.util.*;
 
 public class App 
 {
     public static void main( String[] args )
     {
+        Integer legalPhoneNumberSize = 10;
+
         KeypadChess keypad = new KeypadChess();
-        PhoneNumbers phoneNumbers = new PhoneNumbers();
-
-        Integer startKey = 5;
-        phoneNumbers.constructLegalNumber(startKey);
-
+        Integer startKey = 1;
         PieceFactory pieceFactory = new PieceFactory(keypad,startKey);
-        Piece queen = pieceFactory.getPiece("queen");
 
-        while (true) {
-            for (int n = 1; n <= 12; n++) {
+        Piece piece = pieceFactory.getPiece("queen");
 
-                queen.movePiece(n);
-                phoneNumbers.constructLegalNumber(queen.key);
-            }
-            System.out.println(phoneNumbers.totalLegalNumbers);
-        }
+        MovePieceEngine movePieceEngine = new MovePieceEngine(keypad.getNumberOfKeys());
+        Stack<Integer> initialPhoneNumber = new Stack<>();
 
-    /*
-        if (true) {
-            Piece pawn = pieceFactory.getPiece("pawn");
-
-            int targetKey = 2;
-            System.out.println("Current Key: " + keypad.getKey(pawn.pieceCoordinates) + " Target: " + targetKey);
-            pawn.movePiece(targetKey);
-            targetKey = 4;
-            System.out.println("Current Key: " + keypad.getKey(pawn.pieceCoordinates) + " Target: " + targetKey);
-            pawn.movePiece(targetKey);
-            System.out.println("Current Key: " + keypad.getKey(pawn.pieceCoordinates) + " Target: " + targetKey);
-
-        }
-        if (false) {
-
-            Piece queen = pieceFactory.getPiece("queen");
-            int targetKey = 3;
-            System.out.println("Current Key: " + keypad.getKey(queen.pieceCoordinates) + " Target: " + targetKey);
-            queen.movePiece(targetKey);
-            System.out.println("Current Key: " + keypad.getKey(queen.pieceCoordinates) + " Target: " + targetKey);
-        }
-        if (false) {
-
-            Piece rook = pieceFactory.getPiece("rook");
-            int targetKey = 11;
-            System.out.println("Current Key: " + keypad.getKey(rook.pieceCoordinates) + " Target: " + targetKey);
-            rook.movePiece(targetKey);
-            System.out.println("Current Key: " + keypad.getKey(rook.pieceCoordinates) + " Target: " + targetKey);
-        }
-        if (false) {
-
-            Piece bishop = pieceFactory.getPiece("bishop");
-            int targetKey = 4;
-            System.out.println("Current Key: " + keypad.getKey(bishop.pieceCoordinates) + " Target: " + targetKey);
-            bishop.movePiece(targetKey);
-            System.out.println("Current Key: " + keypad.getKey(bishop.pieceCoordinates) + " Target: " + targetKey);
-        }
-        if (false) {
-
-            Piece knight = pieceFactory.getPiece("knight");
-            int targetKey = 4;
-            System.out.println("Current Key: " + keypad.getKey(knight.pieceCoordinates) + " Target: " + targetKey);
-            knight.movePiece(targetKey);
-            System.out.println("Current Key: " + keypad.getKey(knight.pieceCoordinates) + " Target: " + targetKey);
-        }
-        if (false) {
-
-            Piece king = pieceFactory.getPiece("king");
-            int targetKey = 10;
-            System.out.println("Current Key: " + keypad.getKey(king.pieceCoordinates) + " Target: " + targetKey);
-            king.movePiece(targetKey);
-            System.out.println("Current Key: " + keypad.getKey(king.pieceCoordinates) + " Target: " + targetKey);
-        }
-
-     /*   ArrayList<Integer> coordinates = keypad.getCoordinates(0);
-        Integer key = keypad.getKey(0,1);
-*/
+        movePieceEngine.permutations(initialPhoneNumber, legalPhoneNumberSize, piece);
+        Integer totalGeneratedNumbers = piece.validKeys.size() + piece.validNumbers;
+        System.out.println(totalGeneratedNumbers);
 
     }
 }
