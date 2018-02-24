@@ -1,10 +1,10 @@
-package com;
+package com.chessInterview;
 
 public class PieceFactory {
     private KeypadChess keypad;
     private Integer startKey;
 
-    public PieceFactory(KeypadChess keypad,Integer startKey) {
+    PieceFactory(KeypadChess keypad,Integer startKey) {
         this.keypad = keypad;
         this.startKey = startKey;
     }

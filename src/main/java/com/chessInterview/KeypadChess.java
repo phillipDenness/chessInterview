@@ -1,10 +1,10 @@
-package com;
+package com.chessInterview;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
 public class KeypadChess {
-    private LinkedHashMap<Integer,ArrayList<Integer>> xPlanes = new LinkedHashMap<Integer, ArrayList<Integer>>();
+    private LinkedHashMap<Integer,ArrayList<Integer>> xPlanes = new LinkedHashMap<>();
 
     public Integer getNumberOfKeys(){
         int total = 0;
@@ -48,7 +48,7 @@ public class KeypadChess {
         return getKey(pieceCoordinates.get(0), pieceCoordinates.get(1));
     }
 
-    public Integer getKey(int xPlane, int yPlane){
+    private Integer getKey(int xPlane, int yPlane){
 
         if (xPlane > xPlanes.size()) {
             return 99;

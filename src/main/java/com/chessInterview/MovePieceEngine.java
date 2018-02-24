@@ -1,18 +1,18 @@
-package com;
+package com.chessInterview;
 
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Stack;
 
 public class MovePieceEngine {
-    private Set<Integer> possibleMoves = new HashSet<Integer>();
+    private Set<Integer> possibleMoves = new HashSet<>();
     private Stack<Integer> initialPhoneNumber = new Stack<>();
 
     public Stack<Integer> getInitialPhoneNumber(){
         return initialPhoneNumber;
     }
 
-    public MovePieceEngine(Integer numberOfMoves){
+    MovePieceEngine(Integer numberOfMoves){
         for (int i=1 ; i <= numberOfMoves ; i++) {
             possibleMoves.add(i);
         }

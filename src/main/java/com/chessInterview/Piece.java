@@ -1,4 +1,4 @@
-package com;
+package com.chessInterview;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -7,7 +7,7 @@ import java.util.Set;
 public abstract class Piece {
 
     KeypadChess keypad;
-    Integer validNumbers = 0;
+    Integer validNumbers=0;
     ArrayList<Integer> pieceCoordinates;
     Integer key;
     Set<Integer> validKeys = new HashSet<>();

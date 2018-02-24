@@ -1,11 +1,11 @@
-package com;
+package com.chessInterview;
 
 import java.util.Scanner;
 
-import static com.App.pieceTypes;
+import static com.chessInterview.App.pieceTypes;
 
 public class GetUserInput {
-    Scanner reader = new Scanner(System.in);  // Reading from System.in
+    private Scanner reader = new Scanner(System.in);  // Reading from System.in
 
     public Integer getStartPosition(){
         Integer position;

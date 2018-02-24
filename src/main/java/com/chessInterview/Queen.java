@@ -1,9 +1,10 @@
-package com;
+package com.chessInterview;
 
 import java.util.ArrayList;
 
-public class Knight extends Piece {
-    public Knight(KeypadChess keypad, Integer startKey) {
+public class Queen extends Piece {
+
+    Queen(KeypadChess keypad, Integer startKey) {
         super(keypad, startKey);
     }
 
@@ -32,12 +33,9 @@ public class Knight extends Piece {
         Integer xPlaneDifference = Math.abs(xCurrentPlane - xTargetPlane);
         Integer yPlaneDifference = Math.abs(yCurrentPlane - yTargetPlane);
 
-        //System.out.println(xPlaneDifference + "," + Math.abs(yPlaneDifference));
-
-        if (targetCoordinates == pieceCoordinates || xPlaneDifference.equals(2) && yPlaneDifference.equals(1) || xPlaneDifference.equals(1) && yPlaneDifference.equals(2)){
-            return true;
+        if (targetCoordinates == pieceCoordinates || xCurrentPlane.equals(xTargetPlane) || yCurrentPlane.equals(yTargetPlane) || xPlaneDifference.equals(yPlaneDifference)){
+                return true;
         }
         return false;
     }
-
 }

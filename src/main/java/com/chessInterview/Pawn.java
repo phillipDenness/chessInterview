@@ -1,16 +1,16 @@
-package com;
+package com.chessInterview;
 
 import java.util.ArrayList;
 
 public class Pawn extends Piece{
     private Boolean isQueen = false;
 
-    public Pawn(KeypadChess keypad, Integer startKey) {
+    Pawn(KeypadChess keypad, Integer startKey) {
         super(keypad, startKey);
         checkReachedEndOfRow(pieceCoordinates.get(0));
     }
 
-    public void checkReachedEndOfRow(Integer pieceRow){
+    private void checkReachedEndOfRow(Integer pieceRow){
         if (pieceRow.equals(0)){
             this.isQueen = true;
         }

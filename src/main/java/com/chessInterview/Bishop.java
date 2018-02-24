@@ -1,15 +1,16 @@
-package com;
+package com.chessInterview;
 
 import java.util.ArrayList;
 
-public class King extends Piece {
+public class Bishop extends Piece {
 
-    public King(KeypadChess keypad, Integer startKey) {
+    Bishop(KeypadChess keypad, Integer startKey) {
         super(keypad, startKey);
     }
 
     public Boolean movePiece(Integer key) {
         ArrayList<Integer> targetCoordinates = keypad.getCoordinates(key);
+
         if (validateMove(targetCoordinates)){
 
             if (!(key==10) && !(key==12)) {
@@ -33,11 +34,10 @@ public class King extends Piece {
         Integer xPlaneDifference = Math.abs(xCurrentPlane - xTargetPlane);
         Integer yPlaneDifference = Math.abs(yCurrentPlane - yTargetPlane);
 
-        // System.out.println(xPlaneDifference + "," + Math.abs(yPlaneDifference));
-        if (targetCoordinates == pieceCoordinates || xPlaneDifference.equals(1) || yPlaneDifference.equals(1)){
+       // System.out.println(xPlaneDifference + "," + Math.abs(yPlaneDifference));
+        if (targetCoordinates == pieceCoordinates || xPlaneDifference.equals(yPlaneDifference)){
             return true;
         }
-        return false;
+            return false;
     }
-
 }

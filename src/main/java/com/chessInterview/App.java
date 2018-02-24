@@ -1,11 +1,11 @@
-package com;
+package com.chessInterview;
 
 import java.util.*;
 
 public class App 
 {
-    public static final Integer LEGEALPHONENUMBERSIZE = 10;
-    public static final ArrayList pieceTypes = new ArrayList(Arrays.asList("rook","pawn","bishop","queen","king","knight"));
+    private static final Integer LEGEALPHONENUMBERSIZE = 10;
+    static final ArrayList pieceTypes = new ArrayList(Arrays.asList("rook","pawn","bishop","queen","king","knight"));
 
     public static void main( String[] args )
     {
